@@ -1,41 +1,44 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import TodoItem from './TodoItem';
-import { checkItem, addItem, editInput, deleteItem } from '../Actions';
+import { checkItem, addItem, editInput, deleteItem, getItems } from '../Actions';
+import styles from '../Styles/TodoList.css'
 
 class TodoList extends Component {
 
-	checkItem = (text) => {
-		this.props.checkItem(text);
-	}
+  componentDidMount() {
+    this.props.getItems()
+  }
+
 
 	addItem = (evt) => {
-		evt.preventDefault();
-		this.props.addItem();
+    evt.preventDefault();
+    this.props.addItem(this.props.inputValue)
 	}
 
 	editInput = (evt) => {
+    evt.preventDefault();
 		this.props.editInput(evt.target.value);
 	}
 
 	render() {
 		return (
-			<div>
+			<div className={styles.container}>
+        <form onSubmit={this.addItem}>
+          <input type="text" value={this.props.inputValue} onChange={this.editInput} />
+				</form>
 				<ul>
 					{this.props.items.map((item, index) => (
 						<li key={index}>
 							<TodoItem
-								onClick={this.checkItem}
+								onClick={() => this.props.checkItem(item.id)}
 								text={item.text}
 								checked={item.checked}
-                deleteItem={() => this.props.deleteItem(item.text)}
+                deleteItem={() => this.props.deleteItem(item.id)}
 							/>
 						</li>
 					))}
 				</ul>
-				<form onSubmit={this.addItem}>
-          <input type="text" value={this.props.inputValue} onChange={this.editInput} />
-				</form>
 			</div>
 		)
 	}
@@ -52,7 +55,8 @@ const mapDispatchToProps = {
   checkItem,
   addItem,
   editInput,
-  deleteItem
+  deleteItem,
+  getItems
 }
 
 export default connect(mapStateToProps, mapDispatchToProps)(TodoList);
