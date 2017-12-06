@@ -1,0 +1,17 @@
+body {
+  font-family: 'Caveat Brush', cursive;
+  background: #fff;
+  padding: 0;
+  margin: 0;
+}
+
+input,
+textarea,
+button,
+a {
+    font-family: 'Caveat Brush', cursive;
+}
+
+*, *:after, *:before {
+  box-sizing: border-box;
+}

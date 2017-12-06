@@ -33,7 +33,7 @@ app.get('/getItems', function(req, res){
 app.post('/addItem', function(req, res){
   const newItem = req.body.item;
   const newId = Math.max(...savedItems.map(i => i.id)) + 1
-  savedItems = [...savedItems, {id: newId,checked: false,text:newItem}];
+  savedItems = [...savedItems, {id: newId,checked: false,text:newItem}].reverse();
   updateItems(res)
 })
 
