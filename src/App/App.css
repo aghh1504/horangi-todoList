@@ -1,8 +1,17 @@
+html,
+body {
+  height: 100%;
+}
+
 body {
   font-family: 'Caveat Brush', cursive;
   background: #fff;
   padding: 0;
   margin: 0;
+  background-image: url(../palm.svg);
+  background-repeat: no-repeat;
+  background-size: contain;
+  background-position: center center;
 }
 
 input,

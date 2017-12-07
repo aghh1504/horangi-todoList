@@ -10,7 +10,6 @@ class TodoList extends Component {
     this.props.getItems()
   }
 
-
 	addItem = (evt) => {
     evt.preventDefault();
     this.props.addItem(this.props.inputValue)
