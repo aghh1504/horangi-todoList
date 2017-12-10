@@ -1,5 +1,5 @@
  :local(.content) {
-   font-size: 15px;
+   font-size: 3vw;
    text-align: center;
  }
  :local(.deleteItem) {
@@ -8,9 +8,8 @@
   display: inline-block;
   position: absolute;
   right: 10vw;
-  height: 10vw;
   width: 7vw;
-  font-size: 5vw;
+  font-size: 3vw;
   vertical-align: middle;
   text-align: center;
   padding: 1vw 2.5vw;
@@ -40,8 +39,8 @@
   margin-right: 7vw;
   display: inline-block;
   vertical-align: middle;
-  width: 10vw;
-  height: 10vw;
+  width: 2vw;
+  height: 2vw;
   background: white;
   border: dotted 1px #ed2939;
   margin-top: -1vw;
@@ -66,11 +65,11 @@
 :local(.checkbox):checked + label:after {
   content: '';
   position: absolute;
-  left: 3.2vw;
-  top: 4vw;
+  left: 0.5vw;
+  top: 0.8vw;
   background: white;
-  width: 1vw;
-  height: 1vw;
+  width: 0.3vw;
+  height: 0.3vw;
   box-shadow: 2px 0 0 white, 4px 0 0 white, 4px -2px 0 white, 4px -4px 0 white, 4px -6px 0 white, 4px -8px 0 white;
   -webkit-transform: rotate(45deg);
           transform: rotate(45deg);

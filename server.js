@@ -17,7 +17,7 @@ app.use(function(req, res, next) {
 const reqPath = path.join(__dirname, './data.json');
 let savedItems = JSON.parse(fs.readFileSync(reqPath, 'utf8'));
 
-const updateItems = res =>{
+const updateItems = res => {
   fs.writeFile(reqPath, JSON.stringify(savedItems), 'utf8', function(err) {
     if(err) {
       console.log(err);
